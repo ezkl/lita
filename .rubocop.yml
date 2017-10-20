@@ -15,7 +15,7 @@ DoubleNegation:
 EachWithObject:
   Enabled: false
 EndAlignment:
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 GuardClause:
   Enabled: false
 IndentHash:
