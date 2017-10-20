@@ -13,6 +13,9 @@ matrix:
   allow_failures:
     - rvm: jruby-9.0.0.0
     - rvm: rbx-2
+    - rvm: 2.0
+    - rvm: 2.1
+    - rvm: 2.2
   fast_finish: true
 script: bundle exec rake
 before_install:
