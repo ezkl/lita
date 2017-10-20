@@ -99,7 +99,7 @@ module Lita
           end
           input = normalize_input(input)
           normalize_history(input)
-          break if input == "exit" || input == "quit"
+          break if %w[exit quit].include? input
           robot.receive(build_message(input, @source))
         end
       end

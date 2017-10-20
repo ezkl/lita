@@ -225,9 +225,9 @@ describe Lita::ConfigurationBuilder do
 
   describe "#combine" do
     let(:config_2) do
-      config_2 = described_class.new
-      config_2.config(:bar)
-      config_2
+      config2 = described_class.new
+      config2.config(:bar)
+      config2
     end
 
     it "sets the provided configuration as the value of the provided attribute" do

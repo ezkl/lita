@@ -23,7 +23,7 @@ module Lita
     # @param default_path [String] The base of the file path to use when run as root.
     # @return [String] The full file path.
     def self.file_path_for(file_name, default_path)
-      base_path = Process.euid == 0 ? default_path : ENV["HOME"]
+      base_path = Process.euid.zero? ? default_path : ENV["HOME"]
       File.join(base_path, file_name)
     end
 
@@ -115,7 +115,7 @@ module Lita
     def version
       puts VERSION
     end
-    map %w(-v --version) => :version
+    map %w[-v --version] => :version
 
     desc "validate", "Verifies if lita is correctly configured"
     option :config,

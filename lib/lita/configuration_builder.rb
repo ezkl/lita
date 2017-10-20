@@ -56,20 +56,22 @@ module Lita
       # @return [void]
       # @api private
       def load_user_config(config_path = nil)
-        config_path = "lita_config.rb" unless config_path
+        config_path ||= "lita_config.rb"
 
-        begin
-          load(config_path)
-        rescue ValidationError
-          abort
-        rescue Exception => e
-          Lita.logger.fatal I18n.t(
-            "lita.config.exception",
-            message: e.message,
-            backtrace: e.backtrace.join("\n")
-          )
-          abort
-        end if File.exist?(config_path)
+        if File.exist?(config_path)
+          begin
+            load(config_path)
+          rescue ValidationError
+            abort
+          rescue Exception => e
+            Lita.logger.fatal I18n.t(
+              "lita.config.exception",
+              message: e.message,
+              backtrace: e.backtrace.join("\n")
+            )
+            abort
+          end
+        end
       end
     end
 

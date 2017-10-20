@@ -12,6 +12,8 @@ Documentation:
   Enabled: false
 DoubleNegation:
   Enabled: false
+DuplicateMethods:
+  Enabled: false
 EachWithObject:
   Enabled: false
 EndAlignment:
@@ -19,6 +21,8 @@ EndAlignment:
 GuardClause:
   Enabled: false
 IndentHash:
+  Enabled: false
+IndentHeredoc:
   Enabled: false
 LineLength:
   Max: 100
@@ -33,6 +37,8 @@ ParameterLists:
 RegexpLiteral:
   Enabled: false
 RescueException:
+  Enabled: false
+RescueWithoutErrorClass:
   Enabled: false
 SignalException:
   Enabled: false

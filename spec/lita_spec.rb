@@ -29,7 +29,7 @@ describe Lita do
       load_path
     end
 
-    let(:new_locales) { %w(foo bar) }
+    let(:new_locales) { %w[foo bar] }
 
     before do
       allow(I18n).to receive(:load_path).and_return(load_path)

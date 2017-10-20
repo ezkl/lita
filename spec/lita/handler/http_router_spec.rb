@@ -94,9 +94,9 @@ describe handler, lita_handler: true do
         expect(error).to be_an_instance_of(TypeError)
       end
 
-      number = RbConfig::CONFIG['ruby_version'] =~ /^2\.4.+$/ ? 'Integer' : 'Fixnum'
-
-      expect { http.get("/boom") }.to raise_error(TypeError, "String can't be coerced into #{number}")
+      number = RbConfig::CONFIG["ruby_version"] =~ /^2\.4.+$/ ? "Integer" : "Fixnum"
+      expected = "String can't be coerced into #{number}"
+      expect { http.get("/boom") }.to raise_error(TypeError, expected)
     end
   end
 end
