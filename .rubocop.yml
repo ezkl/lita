@@ -46,3 +46,5 @@ TrailingCommaInLiteral:
   Enabled: false
 TrivialAccessors:
   Enabled: false
+Metrics/BlockLength:
+  Enabled: false
